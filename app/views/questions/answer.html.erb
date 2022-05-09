@@ -1,0 +1,26 @@
+<div class="container p-5">
+
+  <div class="shadow rounded mb-3 p-3">
+    <h2><%= @question %></h2>
+    <p>- You</p>
+  </div>
+
+  <% if @question == 'I am going to work' %>
+      <div class="shadow rounded mb-3 p-3">
+        <h2><%= 'Great!' %></h2>
+        <p class='text-left'><%= '- Your coach' %></p>
+      </div>
+    <% elsif @question.include? '?' %>
+      <div class="shadow rounded mb-3 p-3">
+        <h2><%= 'Silly question, get dressed and go to work!' %></h2>
+        <p><%= '- Your coach' %></p>
+      </div>
+    <% else %>
+      <div class="shadow rounded mb-3 p-3">
+        <h2><%= "I don't care, get dressed and go to work!" %></h2>
+        <p><%= '- Your coach' %></p>
+      </div>
+  <% end %>
+
+  <%= link_to 'Ask another question', ask_path, class: 'btn btn-primary shadow'%>
+</div>
